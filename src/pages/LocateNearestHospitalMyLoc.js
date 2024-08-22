@@ -190,7 +190,7 @@ const LocateNearestHospitalMyLoc = () => {
   }, []);
 
   useEffect(() => {
-    if (textToSearch == null || textToSearch.length == 0) setSearchList([]);
+    if (textToSearch === null || textToSearch.length === 0) setSearchList([]);
   }, [textToSearch]);
 
   function failed() {
@@ -278,8 +278,8 @@ const LocateNearestHospitalMyLoc = () => {
         </FormControl>
         <br />
         <Button
-          hidden={locationOption != "currentLocation"}
-          disabled={locationOption != "currentLocation"}
+          hidden={locationOption !== "currentLocation"}
+          disabled={locationOption !== "currentLocation"}
           color="primary"
           onClick={findHospital}
           className="button"
@@ -355,7 +355,7 @@ const LocateNearestHospitalMyLoc = () => {
                       {row.Name}
                     </TableCell>
                     {/*  TODO 3: Display the distance in the form of a whole number hint: there is predefined function for this in js*/}
-                    <TableCell>{row.distance} Km</TableCell>
+                    <TableCell>Math.round({row.distance}) Km</TableCell>
                     <TableCell>{row.Address}</TableCell>
                   </TableRow>
                 ))}
